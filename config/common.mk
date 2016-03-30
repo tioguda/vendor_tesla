@@ -176,6 +176,9 @@ PRODUCT_COPY_FILES += \
 endif
 endif
 
+#DragonTC
+-include vendor/tesla/config/dtc.mk
+
 # Versioning System
 # Tesla first version.
 PRODUCT_VERSION_MAJOR = 6.0.1
