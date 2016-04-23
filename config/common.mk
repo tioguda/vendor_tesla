@@ -84,7 +84,6 @@ PRODUCT_PACKAGES += \
 
 # Extra Optional packages
 PRODUCT_PACKAGES += \
-    SlimLauncher \
     LatinIME \
     BluetoothExt \
     SlimOTA \
@@ -112,6 +111,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
    vendor/tesla/prebuilt/common/etc/UPDATE-SuperSU.zip:system/addon.d/UPDATE-SuperSU.zip \
    vendor/tesla/prebuilt/common/etc/init.d/99SuperSUDaemon:system/etc/init.d/99SuperSUDaemon
+
+# NovaLauncher
+PRODUCT_COPY_FILES += \
+vendor/tesla/prebuilt/common/app/Nova33.apk:system/app/Nova33.apk
 
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
