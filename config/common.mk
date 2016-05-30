@@ -91,7 +91,8 @@ PRODUCT_PACKAGES += \
     DashClock \
     OmniSwitch \
     Snap \
-    OmniStyle
+    OmniStyle \
+    KernelAdiutor
 
 #    SlimFileManager removed until updated
 
@@ -116,6 +117,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
 vendor/tesla/prebuilt/common/app/Nova33.apk:system/app/Nova33.apk
 
+# Adaway
+PRODUCT_COPY_FILES += \
+vendor/tesla/prebuilt/common/app/adaway.apk:system/app/adaway.apk
+
 # Stagefright FFMPEG plugin
 PRODUCT_PACKAGES += \
     libffmpeg_extractor \
@@ -130,6 +135,13 @@ PRODUCT_PROPERTY_OVERRIDES += \
 -include vendor/extra/product.mk
 
 PRODUCT_PACKAGE_OVERLAYS += vendor/tesla/overlay/common
+
+# Viper4Android
+PRODUCT_COPY_FILES += \
+   vendor/tesla/prebuilt/common/bin/audio_policy.sh:system/audio_policy.sh \
+   vendor/tesla/prebuilt/common/addon.d/95-LolliViPER.sh:system/addon.d/95-LolliViPER.sh \
+   vendor/tesla/prebuilt/common/su.d/50viper.sh:system/su.d/50viper.sh \
+   vendor/tesla/prebuilt/common/app/Viper4Android/Viper4Android.apk:system/priv-app/Viper4Android/Viper4Android.apk
 
 # Boot animation include
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
@@ -168,17 +180,20 @@ PRODUCT_COPY_FILES += \
 endif
 endif
 
+#DragonTC
+-include vendor/tesla/config/dtc.mk
+
 # Versioning System
 # Tesla first version.
 PRODUCT_VERSION_MAJOR = 6.0.1
 PRODUCT_VERSION_MINOR = EMP
-PRODUCT_VERSION_MAINTENANCE = v2.0
+PRODUCT_VERSION_MAINTENANCE = v2.1
 ifdef TIPSY_BUILD_EXTRA
     TESLA_POSTFIX := -$(TESLA_BUILD_EXTRA)
 endif
 
 ifndef TESLA_BUILD_TYPE
-    TESLA_BUILD_TYPE := ALPHA
+    TESLA_BUILD_TYPE := BETA
     TESLA_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
 endif
 
