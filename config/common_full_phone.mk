@@ -7,5 +7,5 @@ PRODUCT_PACKAGES += \
     Stk
 
 # SMS
-PRODUCT_PACKAGES += \
-	messaging
+#PRODUCT_PACKAGES += \
+#	messaging
